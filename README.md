@@ -1,7 +1,7 @@
 #  ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 2 - Singapore Housing Data and Kaggle Challenge
 
 ### Project Objectives:
- We are tasked with creating a regression model based on Singapore Housing Dataset. This model will predict the price of a house at sale.
+ This is the second project that was completed as part of the General Assembly Data Science Immersive curriculum. We are tasked with creating a regression model based on Singapore Housing Dataset. This model will predict the price of a house at sale.
 
 
 
