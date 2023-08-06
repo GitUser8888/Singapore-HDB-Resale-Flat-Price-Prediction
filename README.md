@@ -1,12 +1,18 @@
 #  ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png) Project 2 - Singapore Housing Data and Kaggle Challenge
 
 ### Project Objectives:
- This is the second project that was completed as part of the General Assembly Data Science Immersive curriculum. We are tasked with creating a regression model based on Singapore Housing Dataset. This model will predict the price of a house at sale.
+ This project is done as part of the Data Science Immersive course in General Assembly, and was completed in a short time frame of only 2 weeks. We are tasked with creating a regression model based on the [Singapore Public Housing Dataset](https://www.kaggle.com/competitions/dsi-sg-project-2-regression-challenge-hdb-price) to predict the price of resale HDB (Housing and Development Board) flats.
+
+HDB resale prices in Singapore refer to the market value of public housing flats that are sold by existing homeowners to prospective buyers. The HDB is Singapore's public housing authority and plays a crucial role in providing affordable housing for the country's citizens.
+
+Over the years, HDB resale prices have generally experienced an upward trend due to Singapore's economic growth, increasing demand for housing, and limited land availability. The government has implemented various measures to ensure affordability and stability in the public housing market.
+
+However, the HDB resale market remains a big market, and it is important to get ahead in one’s planning when looking to buy or sell a HDB resale flat. For this project, we tackled it in the perspective of a property agent looking to find the best deals for both sellers and buyers.
 
 
 
 ## The Modeling Process
-1. The train dataset has all of the columns needed to generate and refine the models. The test dataset has all of those columns except for the target variable.
+1. The train dataset has all of the columns needed to generate and refine the models. The test dataset has all of those columns except for the target variable (resale price).
 2. Generate regression model using the training data. This process consists of:
     - Data Cleaning
     - EDA / Correlation
@@ -16,26 +22,22 @@
     - Linear Regression
     - Lasso Regression
     - Ridge Regression
-    - Cross-validation
-    - Refining Models 
+    - Refining Models
+    - _as a revisit to this project after the end of the Data Science Immersive course, I added in modelling with PyCaret to build a better model with higher R2 and lower RMSE_ 
 
-3. Predict the values for your target column in the test dataset 
+3. Predict the values for target column (resale price) in the test dataset 
     -  Use of train-test split, cross-validation, and data with unknown values for the target to simulate the modeling process
 
-4. Evaluate models!
-    - evaluation metrics
-    - baseline score
-    - model inferential
-    - model generalization
+4. Evaluate models
 
 ---
 
 ### Data used:
-This Dataset is an exceptionally detailed with over 70 columns of different features relating to houses.
+This dataset is exceptionally detailed with over 70 columns of different features relating to the parameters of the resale flat.
 
-For the purpose of the analysis, we are provided with the `train` and `test` datasets. The `train` dataset contains Singapore Housing sales prices and their relevant information from 2012 to 2021. `train` datasets will be use model building purposes. Information found in the `test` datasets contains the same fields as those found in the `train` dataset, except for the sale prices. Sales prices will be predicted using the trained model
+For the purpose of the analysis, we are provided with the `train` and `test` datasets. The `train` dataset contains the resale price of the flats and their relevant information from 2012 to 2021. `train` datasets will be use model building purposes. Information found in the `test` datasets contains the same fields as those found in the `train` dataset, except for the resale prices. Resales prices will be predicted using the trained model
 
-Information found in the `train` datasets includes information suchs as the sale prices, planning_area,,flat_model, hdb_age, full_flat_type, mrt_nearest_distance, hawker_nearest_distance and pri_sch_nearest_distance
+Information found in the `train` datasets includes information such as resale prices, planning_area, flat_model, hdb_age, full_flat_type, mrt_nearest_distance, hawker_nearest_distance and pri_sch_nearest_distance and so on.
 The full information could be found in the data dictionary below.
 
 
@@ -44,8 +46,7 @@ The full information could be found in the data dictionary below.
 
 ### Data Dictionary:
 
-<br>**Dataset name: `test`**
-<br>This dataset contains data of houses that have been sold over from 2012 to 2021. 
+<br>This dataset contains data of resale flats that have been sold from 2012 to 2021. 
 
 | **Column names** | **Descriptions** |
 |---|---|
@@ -131,18 +132,15 @@ The full information could be found in the data dictionary below.
 ---
 
 ### Key takeaways from the project:
-1. The model that is the best at predicting sale price is the **Linear Regression** model with a test $R^2$ score of 0.86
+1) The Random Forest Regressor model using PyCaret is the best at predicting resale price with the highest R^2 score of 0.9687 and lowest RMSE at 25327.7575
 
-2. Features such as flat_age ,floor Area, storey of unit, transaction_year  and distance_to_nearest_mrt are good predictors of sale prices.
-
-3. Houses that are located in 'downtown core', 'tanglin', 'outram', 'bukit timah', 'bishan' areas are likely to have high sale prices. 
-
-_Note: The Kaggle score (RMSE) for the production model was ~50,000
+2) Top important features are: floor area, mrt, flat model, max floor level and primary school
 
 ---
 
-### Recommendations:
-Recommendations are focused on targeting the right home owners as homes with higher sales price will command higher commission income as commission income is usually based on a percentage of the sale prices. The recommendations are as follows: 
-1. Plan your budget and expectations. The more information you have, the more you can make an informed choice
-2. Minimise time and money wastage.
-3. Get a better deal
+The value in being able to predict HDB resale prices with machine learning models comes in the following:
+
+1) Plan budget and expectations better.
+2) The more information you have, the more you can make an informed choice. 
+3) Minimise time and money wastage.
+4) Get a better deal in the perspective of either the buyer or seller
