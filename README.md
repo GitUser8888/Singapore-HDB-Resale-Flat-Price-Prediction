@@ -15,8 +15,8 @@ However, the HDB resale market remains a big market, and it is important to get 
 1. The train dataset has all of the columns needed to generate and refine the models. The test dataset has all of those columns except for the target variable (resale price).
 2. Generate regression model using the training data. This process consists of:
     - Data Cleaning
-    - EDA / Correlation
-    - Data Visualization (Scatter Plot / Boxplot )
+    - EDA
+    - Data Visualization
     - Feature Engineering
     - Train-test split
     - Linear Regression
@@ -26,7 +26,7 @@ However, the HDB resale market remains a big market, and it is important to get 
     - _as a revisit to this project after the end of the Data Science Immersive course, I added in modelling with PyCaret to build a better model with higher R2 and lower RMSE_ 
 
 3. Predict the values for target column (resale price) in the test dataset 
-    -  Use of train-test split, cross-validation, and data with unknown values for the target to simulate the modeling process
+    -  Use of train-test split, cross-validation, and unseen data
 
 4. Evaluate models
 
